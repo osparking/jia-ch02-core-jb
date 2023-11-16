@@ -18,6 +18,13 @@
 			<version>5.10.0</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+		  <groupId>space.jbpark</groupId>
+		  <artifactId>utility</artifactId>
+		  <scope>system</scope>
+		  <version>0.0.1-SNAPSHOT</version>
+		  <systemPath>d:/study/ws/fullstack/spring/start/util/utility-0.0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
 	</dependencies>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
