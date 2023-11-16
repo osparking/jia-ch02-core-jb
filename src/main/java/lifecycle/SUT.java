@@ -21,26 +21,31 @@
 
 package lifecycle;
 
+import java.io.PrintStream;
+
+import space.jbpark.utility.MyUtil;
+
 public class SUT {
     private String systemName;
+    private PrintStream ps = MyUtil.getPrintStream();
 
     public SUT(String systemName) {
         this.systemName = systemName;
-        System.out.println(systemName + " from class " + getClass().getSimpleName() + " is initializing.");
+        ps.println(systemName + " (소속 클래스 " + getClass().getSimpleName() + ") 초기화 되고 있다.");
     }
 
     public boolean canReceiveRegularWork() {
-        System.out.println(systemName + " from class " + getClass().getSimpleName() + " can receive regular work.");
+        ps.println(systemName + " (소속 클래스 " + getClass().getSimpleName() + ") 보통 임무를 수령할 수 있다.");
         return true;
     }
 
     public boolean canReceiveAdditionalWork() {
-        System.out.println(systemName + " from class " + getClass().getSimpleName() + " cannot receive additional work.");
+        ps.println(systemName + " (소속 클래스 " + getClass().getSimpleName() + ") 추가적인 임무를 수령할 수 없다.");
         return false;
     }
 
     public void close() {
-        System.out.println(systemName + " from class " + getClass().getSimpleName() + " is closing.");
+        ps.println(systemName + " (소속 클래스 " + getClass().getSimpleName() + ") 폐쇄하고 있다.");
     }
 
 

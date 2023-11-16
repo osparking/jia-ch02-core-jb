@@ -21,16 +21,21 @@
 
 package lifecycle;
 
+import java.io.PrintStream;
+
+import space.jbpark.utility.MyUtil;
+
 public class ResourceForAllTests {
 
     private String resourceName;
+    private PrintStream ps = MyUtil.getPrintStream();
 
     public ResourceForAllTests(String resourceName) {
         this.resourceName = resourceName;
-        System.out.println(resourceName + " from class " + getClass().getSimpleName() + " is initializing.");
+        ps.println(resourceName + " (소속 클래스: " + getClass().getSimpleName() + ") 초기화하고 있다.");
     }
 
     public void close() {
-        System.out.println(resourceName + " from class " + getClass().getSimpleName() + " is closing.");
+        ps.println(resourceName + " (소속 클래스: " + getClass().getSimpleName() + ") 폐쇄하고 있다.");
     }
 }

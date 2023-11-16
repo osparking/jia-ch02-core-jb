@@ -15,7 +15,7 @@ class SUTTest {
 
 	@BeforeAll // #1
 	static void setUpClass() {
-		resourceForAllTests = new ResourceForAllTests("Our resource for all tests");
+		resourceForAllTests = new ResourceForAllTests("모든 시험 전에 필요한 자원");
 	}
 
 	@AfterAll // #2
@@ -25,7 +25,7 @@ class SUTTest {
 
 	@BeforeEach // #3
 	void setUp() {
-		systemUnderTest = new SUT("Our system under test");
+		systemUnderTest = new SUT("시험 중인 우리 시스템");
 	}
 
 	@AfterEach // #4
