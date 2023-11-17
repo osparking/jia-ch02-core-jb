@@ -21,19 +21,35 @@
 
 package displayname;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 public class SUT {
 
-		public String hello() {
-			return "안녕";
-		}
+	private String description;
+	
+	public SUT(String description) {
+		this.description = description;
+	}
 
-		public String greet() {
-			return "어떻게 지내세요?";
-		}
+	public String hello() {
+		return "안녕";
+	}
 
-		public String goodBye() {
-			return "잘가";
-		}
+	public String greet() {
+		return "어떻게 지내세요?";
+	}
 
+	public String goodBye() {
+		return "잘가";
+	}
+
+	public boolean canReceiveRegularWork() {
+		return true;
+	}
+
+	public boolean canReceiveAdditionWork() {
+		return false;
+	}
 
 }
