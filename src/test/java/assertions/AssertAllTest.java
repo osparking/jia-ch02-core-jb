@@ -24,6 +24,8 @@ class AssertAllTest {
 		String systemName = "시험 중인 우리 시스템";
 		SUT systemUnderTest = new SUT(systemName);
 		
+		systemUnderTest.verify();
+		
 		assertAll("SUT는 현재 검증 중임",
 				() -> assertEquals(systemName, 
 						systemUnderTest.getSystemName()),
