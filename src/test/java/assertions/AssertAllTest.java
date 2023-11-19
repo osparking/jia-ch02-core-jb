@@ -6,6 +6,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class AssertAllTest {
+	String systemName = "검증 대상 우리 시스템";
+	SUT systemUnderTest = new SUT(systemName);
+	
+	@Test
+	@DisplayName("시스템은 현재 검증되고 있지 않다.")
+	void testSysNotUnderVerif() {
+		assertFalse(systemUnderTest.isVerified(),
+				() -> "'" + systemName +"'은 현재 검증되고 있지 않아야 함.");
+	}
 	
 	@Test
 	@DisplayName("SUT는 현재 검증되고 있어야 함")
