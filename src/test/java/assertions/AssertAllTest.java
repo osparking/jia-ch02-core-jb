@@ -10,6 +10,13 @@ class AssertAllTest {
 	SUT systemUnderTest = new SUT(systemName);
 	
 	@Test
+	@DisplayName("시스템에는 현재 작업이 없다")
+	void testNoCurrentWorkOnSystem() {
+		assertNull(systemUnderTest.getCurrentJob(),
+				() -> "시스템에는 현재 작업이 왜 있는가? 이건 오류다.");
+	}
+	
+	@Test
 	@DisplayName("시스템은 현재 검증되고 있지 않다.")
 	void testSysNotUnderVerif() {
 		assertFalse(systemUnderTest.isVerified(),
