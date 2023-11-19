@@ -16,13 +16,13 @@ public class AssertTimeoutTest {
 	void testTimeoutPreemptively() throws InterruptedException {
 		systemUnderTest.addJob(new Job("A Job that takes more than 500ms"));
 		assertTimeoutPreemptively(ofMillis(500), 
-				() -> systemUnderTest.run(600));
+				() -> systemUnderTest.run(623));
 	}
 	
 	@Test
 	@DisplayName("500ms 내에 작업이 수행됨")
 	void testTimeout() throws InterruptedException {
 		systemUnderTest.addJob(new Job("A Job that takes about 200ms"));
-		assertTimeout(ofMillis(500), () -> systemUnderTest.run(200));
+		assertTimeout(ofMillis(500), () -> systemUnderTest.run(623));
 	}
 }
