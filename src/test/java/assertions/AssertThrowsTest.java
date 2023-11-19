@@ -12,6 +12,7 @@ public class AssertThrowsTest {
 	@Test
 	@DisplayName("예상하는 대로 예외가 던저졌다.")
 	void testExceptionThrows() {
+		Runnable runable = systemUnderTest::getCurrentJob;
 		assertThrows(NoJobException.class, systemUnderTest::run);
 	}
 	
