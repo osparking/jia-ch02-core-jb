@@ -68,6 +68,11 @@ public class SUT {
         throw new NoJobException("No jobs on the execution list!");
     }
 
+    /**
+     * 작업을 주어진 작업기간동안 실행한다.
+     * @param jobDuration 작업기간(단위 ms)
+     * @throws InterruptedException
+     */
     public void run(int jobDuration) throws InterruptedException {
         if (jobs.size() > 0) {
             currentJob = jobs.remove(0);
