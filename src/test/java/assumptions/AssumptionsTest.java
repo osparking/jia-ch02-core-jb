@@ -13,7 +13,7 @@ import assumptions.environment.OperationSystem;
 import assumptions.environment.TestsEnvironment;
 
 class AssumptionsTest {
-	private static String JAVA_VERSION = "1.8";
+	private static String JAVA_VERSION = "19";
 	private TestsEnvironment env = new TestsEnvironment(
 			new JavaSpecification(
 					System.getProperty("java.vm.specification.version")),
