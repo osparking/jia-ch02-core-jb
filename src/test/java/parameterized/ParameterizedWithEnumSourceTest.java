@@ -1,6 +1,7 @@
 package parameterized;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.params.provider.EnumSource.Mode.EXCLUDE;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
@@ -12,6 +13,18 @@ public class ParameterizedWithEnumSourceTest {
   @EnumSource(Sentences.class)
   void testWordsInSentence(Sentences sentence) {
       assertEquals(3, wordCounter.countWords(sentence.value()));
+  }	
+  
+  @ParameterizedTest
+  @EnumSource(value = Sentences.class, names = {"JUNIT_IN_ACTION", "THREE_PARAMETERS"})
+  void testSelectedWordsInSentence(Sentences sentence) {
+  	assertEquals(3, wordCounter.countWords(sentence.value()));
+  }	
+  
+  @ParameterizedTest
+  @EnumSource(value = Sentences.class, mode= EXCLUDE, names = {"THREE_PARAMETERS"})
+  void testExcludedWordsInSentence(Sentences sentence) {
+  	assertEquals(3, wordCounter.countWords(sentence.value()));
   }	
 
   enum Sentences {
